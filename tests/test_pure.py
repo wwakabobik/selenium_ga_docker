@@ -17,7 +17,7 @@ from selenium.webdriver.common.by import By
 
 def test_basic():
     options = ChromeOptions()
-    driver = webdriver.Remote(options=options, command_executor="http://localhost:4444")
+    driver = webdriver.Remote(options=options, command_executor="https://selenium:4444")
     driver.get("https://selenium.dev")
     driver.find_element(By.XPATH, "//*[@class='card-body']/h4[.='Selenium WebDriver']")
     driver.quit()  # test
