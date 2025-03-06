@@ -17,11 +17,10 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Check docker
-      run: |
-        docker ps
-
-    - name: Setup Docker
+    - name: Build container(s)
       run: |
         docker compose build
-        docker compose up
+
+    - name: Run container(s)
+      run: |
+        docker compose up --abort-on-container-exit

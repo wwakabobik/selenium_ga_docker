@@ -9,9 +9,8 @@ services:
 
   tests:
     build: .
-    command: pytest tests
     depends_on:
-      - selenium
+      - chrome
     networks:
       - host
 
