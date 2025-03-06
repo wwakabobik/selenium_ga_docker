@@ -5,8 +5,16 @@ services:
     ports:
       - 4444:4444
     shm_size: '2gb'
+    networks:
+      - host
+
   tests:
     build: .
     command: pytest tests
     depends_on:
       - selenium
+    networks:
+      - host
+
+networks:
+  host: {}
