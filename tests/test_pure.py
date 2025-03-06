@@ -14,8 +14,9 @@ from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-options = ChromeOptions()
-driver = webdriver.Remote(options=options, command_executor="http://localhost:4444")
-driver.get("https://selenium.dev")
-driver.find_element(By.XPATH, "//*[@class='card-body']/h4[.='Selenium WebDriver']")
-driver.quit()  # test
+def test_basic():
+    options = ChromeOptions()
+    driver = webdriver.Remote(options=options, command_executor="http://localhost:4444")
+    driver.get("https://selenium.dev")
+    driver.find_element(By.XPATH, "//*[@class='card-body']/h4[.='Selenium WebDriver']")
+    driver.quit()  # test
